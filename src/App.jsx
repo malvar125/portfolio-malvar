@@ -1,9 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import './App.css'
+import Contact from './components/Contact'
 
 export default function App() {
   const [theme, setTheme] = useState('dark')
+
+  useEffect(() => {
+    try {
+      document.documentElement.setAttribute('data-theme', theme)
+    } catch (e) {
+      // server-side or environments without document
+    }
+  }, [theme])
 
   return (
     <div className={`app ${theme}`}>
@@ -51,6 +60,8 @@ export default function App() {
           </div>
         </motion.section>
 
+        <Contact />
+
         <motion.section 
           className="projects" 
           initial={{ opacity: 0 }} 
@@ -91,22 +102,6 @@ export default function App() {
             <li><strong>Next.js (SSR/ISR)</strong> — Better performance and Vercel-first deployment</li>
             <li><strong>Accessibility (a11y)</strong> — Inclusive UI patterns and testing</li>
           </ul>
-        </motion.section>
-
-        <motion.section 
-          className="contact" 
-          initial={{ opacity: 0 }} 
-          whileInView={{ opacity: 1 }} 
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h2>Get in Touch</h2>
-          <p>Reach out via email or connect on social media.</p>
-          <div className="contact-links">
-            <a href="mailto:your.email@example.com">Email</a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a href="https://github.com" target="_blank" rel="noreferrer">GitHub</a>
-          </div>
         </motion.section>
       </main>
 

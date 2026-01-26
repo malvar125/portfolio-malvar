@@ -21,6 +21,16 @@
   --glass: rgba(255,255,255,0.03);
 }
 
+[data-theme='light']{
+  --bg: #ffffff;
+  --surface: #f7f7f8;
+  --text: #0f1724;
+  --muted: #6b7280;
+  --primary: #06b6d4;
+  --accent: #7c3aed;
+  --glass: rgba(2,6,23,0.02);
+}
+
 *{box-sizing:border-box}
 html,body,#root{height:100%}
 body{
@@ -50,6 +60,11 @@ body{
 .hero-left{flex:0 0 320px;display:flex;justify-content:center}
 .avatar-wrap{padding:12px;border-radius:14px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));box-shadow:0 20px 60px rgba(124,58,237,0.06);border:2px solid rgba(124,58,237,0.06)}
 .avatar-img{width:300px;height:300px;border-radius:12px;object-fit:cover;display:block;border:3px solid rgba(0,255,213,0.06);box-shadow:0 10px 40px rgba(0,0,0,0.6),0 0 18px rgba(124,58,237,0.08)}
+
+/* Avatar theme swap: show light image by default, swap when `.app.dark` is present */
+.avatar-img.avatar-dark{display:none}
+.app.dark .avatar-img.avatar-dark{display:block}
+.app.dark .avatar-img.avatar-light{display:none}
 .hero-right{flex:1}
 .hero-subline{color:#d49cff;margin-top:.6rem;margin-bottom:.8rem;font-weight:600}
 .hero-intro{max-width:56ch}

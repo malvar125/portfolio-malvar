@@ -9,7 +9,8 @@ export default function Hero(){
       <motion.div className="hero-portfolio-inner" initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
         <div className="hero-left">
           <div className="avatar-wrap">
-            <img className="avatar-img" src="/src/assets/avatar.jpg" alt="Cedi Earl Stephen Malvar avatar" />
+            <img className="avatar-img avatar-light" src="/src/assets/avatar.jpg" alt="Cedi Earl Stephen Malvar avatar (light)" />
+            <img className="avatar-img avatar-dark" src="/src/assets/avatar-dark.jpg" alt="Cedi Earl Stephen Malvar avatar (dark)" />
           </div>
         </div>
 
